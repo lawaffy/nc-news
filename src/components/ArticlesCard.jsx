@@ -1,5 +1,6 @@
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 function ArticleCard({ article }) {
   return (
@@ -19,7 +20,10 @@ function ArticleCard({ article }) {
         </div>
         <Card.Text>Upvotes: {article.votes}</Card.Text>
         <Card.Text>Comments: {article.comment_count}</Card.Text>
-        <Button variant="primary">View Article</Button>
+
+        <Link to={`/articles/${article.article_id}`}>
+          <Button variant="primary">View Article</Button>
+        </Link>
       </Card.Body>
     </Card>
   );
