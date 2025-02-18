@@ -9,3 +9,9 @@ export function getArticles() {
     return response.data.articles;
   });
 }
+
+export function getSingleArticle(article_id) {
+  return ncNewsApi.get(`/articles/${article_id}`).then((response) => {
+    return response.data;
+  });
+}
