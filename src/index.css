@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #ea7e7e;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -31,7 +31,7 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 1rem;
   line-height: 1.1;
 }
 
@@ -65,4 +65,110 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+@media all and (min-width: 960px) and (max-width: 1024px) {
+  /* put your css styles in here */
+}
+
+@media all and (min-width: 801px) and (max-width: 959px) {
+  /* put your css styles in here */
+}
+
+@media all and (min-width: 769px) and (max-width: 800px) {
+  /* put your css styles in here */
+}
+
+@media all and (min-width: 569px) and (max-width: 768px) {
+  /* put your css styles in here */
+}
+
+@media all and (min-width: 481px) and (max-width: 568px) {
+  /* put your css styles in here */
+}
+
+@media all and (min-width: 321px) and (max-width: 480px) {
+  /* put your css styles in here */
+}
+
+@media all and (min-width: 0px) and (max-width: 320px) {
+  /* put your css styles in here */
+}
+
+.header {
+  background-color: bisque;
+  padding: 1em;
+}
+
+.footer {
+  background-color: bisque;
+  padding: 2em;
+  color: black;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.card {
+  background-color: #ffffff;
+  width: 18rem;
+  padding: 2rem;
+  margin: 5rem;
+  color: black;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.home {
+  padding: 1em;
+  margin-right: auto;
+}
+
+.user {
+  padding: 1em;
+  margin-left: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.card-img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+form {
+  width: 100%;
+  max-width: 500px;
+  background-color: #ffffff;
+  padding: 3rem;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+input {
+  width: 100%;
+  padding: 1rem;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  box-sizing: border-box;
+  background-color: bisque;
+  color: black;
 }
