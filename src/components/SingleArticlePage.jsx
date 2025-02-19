@@ -1,7 +1,7 @@
-import SingleArticleList from "./SingleArticleList";
 import { getSingleArticle } from "../utils/utils";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import SingleArticleCard from "./SingleArticleCard";
 
 function SingleArticlePage() {
   const [singleArticle, setSingleArticle] = useState([]);
@@ -34,12 +34,8 @@ function SingleArticlePage() {
   }
 
   return (
-    <div>
-      <SingleArticleList
-        singleArticle={singleArticle}
-        isLoading={isLoading}
-        error={error}
-      />
+    <div className="article-container">
+      <SingleArticleCard singleArticle={singleArticle} isLoading={isLoading} />
     </div>
   );
 }

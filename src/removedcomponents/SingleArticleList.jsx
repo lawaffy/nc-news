@@ -1,4 +1,4 @@
-import SingleArticleCard from "./SingleArticleCard";
+import SingleArticleCard from "../components/SingleArticleCard";
 
 function SingleArticleList({ singleArticle, isLoading, error }) {
   if (isLoading) {

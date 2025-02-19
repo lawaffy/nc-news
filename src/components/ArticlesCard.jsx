@@ -1,8 +1,14 @@
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function ArticleCard({ article }) {
+  const navigate = useNavigate();
+
+  const handleViewArticle = () => {
+    navigate(`/articles/${article.article_id}`);
+  };
+
   return (
     <Card className="card">
       <Card.Img
@@ -21,9 +27,9 @@ function ArticleCard({ article }) {
         <Card.Text>Upvotes: {article.votes}</Card.Text>
         <Card.Text>Comments: {article.comment_count}</Card.Text>
 
-        <Link to={`/articles/${article.article_id}`}>
-          <Button variant="primary">View Article</Button>
-        </Link>
+        <Button variant="primary" onClick={handleViewArticle}>
+          View Article
+        </Button>
       </Card.Body>
     </Card>
   );
