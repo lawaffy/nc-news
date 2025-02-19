@@ -31,3 +31,7 @@ export function updateVoteCount(article_id, voteUpdate) {
       return response.data.article;
     });
 }
+
+export function postComment(article_id, commentData) {
+  return ncNewsApi.post(`/articles/${article_id}/comments`, commentData);
+}
