@@ -1,0 +1,55 @@
+import { useEffect, useState } from "react";
+import { useParams, useLocation } from "react-router-dom";
+import { getArticleComments } from "../utils/utils";
+import CommentList from "./CommentList";
+import CommentArticle from "./CommentArticle";
+import { useNavigate } from "react-router-dom";
+
+function CommentPage() {
+  const navigate = useNavigate();
+  const [articleComments, setArticleComments] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const { article_id } = useParams();
+
+  const location = useLocation();
+  const { singleArticle } = location.state;
+
+  useEffect(() => {
+    setIsLoading(true);
+    setTimeout(() => {
+      getArticleComments(article_id)
+        .then((commentDataFromApi) => {
+          setArticleComments(commentDataFromApi);
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          setError("Error fetching comments");
+          setIsLoading(false);
+        });
+    }, 500);
+  }, [article_id]);
+
+  if (isLoading) {
+    return <h2>Loading comments...</h2>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
+  return (
+    <div className="comment-container">
+      <CommentArticle singleArticle={singleArticle} />
+      <CommentList articleComments={articleComments} isLoading={isLoading} />
+      <button
+        className="btn"
+        onClick={() => navigate(`/articles/${singleArticle.article_id}`)}
+      >
+        Back to Article
+      </button>
+    </div>
+  );
+}
+
+export default CommentPage;

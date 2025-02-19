@@ -1,3 +1,5 @@
+/* Vite initial styling */
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -42,7 +44,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: hsl(0, 0%, 10%);
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -66,6 +68,8 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Fill in to cater to multiple device sizes */
 
 @media all and (min-width: 960px) and (max-width: 1024px) {
   /* put your css styles in here */
@@ -95,6 +99,7 @@ button:focus-visible {
   /* put your css styles in here */
 }
 
+/* styling for header/fooeter */
 .header {
   background-color: bisque;
   padding: 1em;
@@ -106,6 +111,7 @@ button:focus-visible {
   color: black;
 }
 
+/* for card/bootstrap imports */
 .cards-container {
   display: flex;
   flex-direction: column;
@@ -151,6 +157,7 @@ ul {
   width: 150px;
 }
 
+/* for future  form inputs */
 form {
   width: 100%;
   max-width: 500px;
@@ -171,4 +178,91 @@ input {
   box-sizing: border-box;
   background-color: bisque;
   color: black;
+}
+
+/* single article styling*/
+.article-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.article-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.article-topic {
+  font-size: 1.2rem;
+  color: hsl(0, 0%, 10%);
+}
+
+.article-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+.article-content {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.article-info {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.button-container {
+  display: flex;
+  gap: 50px;
+}
+
+.btn:hover {
+  background-color: bisque;
+  color: hsl(0, 0%, 10%);
+  border: 1px solid transparent;
+}
+
+/* comment page styling*/
+
+.comment-container {
+  padding: 20px;
+}
+
+.comment-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
+
+.comment-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  min-height: 150px;
+}
+
+.comment-text {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: gray;
+}
+
+.comment-author,
+.comment-date,
+.comment-upvotes {
+  font-size: 0.9rem;
+  color: gray;
 }
