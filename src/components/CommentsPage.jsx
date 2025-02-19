@@ -4,6 +4,7 @@ import { getArticleComments } from "../utils/utils";
 import CommentList from "./CommentList";
 import CommentArticle from "./CommentArticle";
 import { useNavigate } from "react-router-dom";
+import PostComment from "./PostComment";
 
 function CommentPage() {
   const navigate = useNavigate();
@@ -39,16 +40,19 @@ function CommentPage() {
   }
 
   return (
-    <div className="comment-container">
-      <CommentArticle singleArticle={singleArticle} />
-      <CommentList articleComments={articleComments} isLoading={isLoading} />
-      <button
-        className="btn"
-        onClick={() => navigate(`/articles/${singleArticle.article_id}`)}
-      >
-        Back to Article
-      </button>
-    </div>
+    <>
+      <section className="comment-container">
+        <CommentArticle singleArticle={singleArticle} />
+        <PostComment />
+        <CommentList articleComments={articleComments} isLoading={isLoading} />
+        <button
+          className="btn"
+          onClick={() => navigate(`/articles/${singleArticle.article_id}`)}
+        >
+          Back to Article
+        </button>
+      </section>
+    </>
   );
 }
 

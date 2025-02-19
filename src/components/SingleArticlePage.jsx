@@ -36,8 +36,6 @@ function SingleArticlePage() {
     return <p>{error}</p>;
   }
 
-  console.log(vote, "heree is the state");
-
   const handleUpvote = () => {
     setVote((currentVote) => currentVote + 1);
 

@@ -30,6 +30,9 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
 h1 {
@@ -158,14 +161,16 @@ ul {
 }
 
 /* for future  form inputs */
+/* Centering the form */
 form {
   width: 100%;
   max-width: 500px;
   background-color: #ffffff;
   padding: 3rem;
-  margin: 20px;
+  margin: 20px auto; /* This will center the form horizontally and keep vertical margin */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: block; /* Ensures it stays as a block element, so it takes up space properly */
 }
 
 input {

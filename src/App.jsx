@@ -5,6 +5,7 @@ import ArticlesPage from "./components/ArticlesPage";
 import SingleArticlePage from "./components/SingleArticlePage";
 import CommentPage from "./components/CommentsPage";
 import { Routes, Route } from "react-router-dom";
+import PostComment from "./components/PostComment";
 
 function App() {
   return (
