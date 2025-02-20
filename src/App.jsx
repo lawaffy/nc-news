@@ -6,6 +6,7 @@ import SingleArticlePage from "./components/SingleArticlePage";
 import CommentPage from "./components/CommentsPage";
 import { Routes, Route } from "react-router-dom";
 import { UserProvider } from "./components/UserContext";
+import TopicsPage from "./components/TopicsPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             path="/articles/:article_id/comments"
             element={<CommentPage />}
           />
+          <Route path="/topics" element={<TopicsPage />} />
         </Routes>
 
         <footer>
