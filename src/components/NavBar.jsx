@@ -9,7 +9,11 @@ function NavBar() {
       <Button variant="primary" className="home" onClick={() => navigate(`/`)}>
         Home
       </Button>
-      <Button variant="primary" className="topics">
+      <Button
+        variant="primary"
+        className="topics"
+        onClick={() => navigate(`/topics`)}
+      >
         Topics
       </Button>
     </div>
