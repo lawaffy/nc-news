@@ -35,3 +35,7 @@ export function updateVoteCount(article_id, voteUpdate) {
 export function postComment(article_id, commentData) {
   return ncNewsApi.post(`/articles/${article_id}/comments`, commentData);
 }
+
+export function deleteComment(comment_id) {
+  return ncNewsApi.delete(`/comments/${comment_id}`);
+}
