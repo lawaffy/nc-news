@@ -31,6 +31,11 @@ function PostComment() {
           username: "",
         });
       })
+      .then(() => {
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
+      })
       .catch((error) => {
         setError("Error posting comment");
       })
@@ -66,7 +71,7 @@ function PostComment() {
       </form>
       {loading && <p>Submitting comment...</p>}
       {success && <p>Comment submitted successfully!</p>}
-      {error && <p>{error}</p>}
+      {error && <p className="text-danger">{error}</p>}
     </>
   );
 }

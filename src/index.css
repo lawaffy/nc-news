@@ -59,6 +59,18 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.text-success {
+  color: rgb(69, 176, 69);
+}
+
+.text-danger {
+  color: rgb(157, 23, 23);
+}
+
+.text-muted {
+  color: bisque;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
