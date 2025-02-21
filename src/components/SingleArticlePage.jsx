@@ -2,6 +2,7 @@ import { getSingleArticle, updateVoteCount } from "../utils/utils";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SingleArticleCard from "./SingleArticleCard";
+import ErrorComponent from "./ErrorComponent";
 
 function SingleArticlePage() {
   const [singleArticle, setSingleArticle] = useState([]);
@@ -21,8 +22,8 @@ function SingleArticlePage() {
           setIsLoading(false);
           setVote(articleDataFromApi.votes);
         })
-        .catch((error) => {
-          setError("Error fetching article");
+        .catch((err) => {
+          setError(err);
           setIsLoading(false);
         });
     }, 500);
@@ -33,12 +34,16 @@ function SingleArticlePage() {
   }
 
   if (error) {
-    return <p>{error}</p>;
+    return (
+      <>
+        <ErrorComponent message={error.message} />
+        <p>Couldn't fetch article</p>
+      </>
+    );
   }
 
   const handleUpvote = () => {
     setVote((currentVote) => currentVote + 1);
-
     setSingleArticle((currentArticle) => ({
       ...currentArticle,
       votes: currentArticle.votes + 1,

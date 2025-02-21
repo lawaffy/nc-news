@@ -7,6 +7,7 @@ import CommentPage from "./components/CommentsPage";
 import { Routes, Route } from "react-router-dom";
 import { UserProvider } from "./components/UserContext";
 import TopicsPage from "./components/TopicsPage";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         </header>
 
         <Routes>
+          <Route path="*" element={<ErrorPage />} />
           <Route path="/" element={<ArticlesPage />} />
           <Route path="/articles" element={<ArticlesPage />} />
           <Route path="/articles/:article_id" element={<SingleArticlePage />} />
