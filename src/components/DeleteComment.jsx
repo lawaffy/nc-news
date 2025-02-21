@@ -2,6 +2,7 @@ import Button from "react-bootstrap/Button";
 import { useState, useContext, useEffect } from "react";
 import { UserContext } from "./UserContext";
 import { deleteComment } from "../utils/utils";
+import ErrorComponent from "./ErrorComponent";
 
 function DeleteComment({ comment_id, user }) {
   const { loggedInUser } = useContext(UserContext);
@@ -27,8 +28,8 @@ function DeleteComment({ comment_id, user }) {
           window.location.reload();
         }, 2000);
       })
-      .catch(() => {
-        setError("Error removing comment");
+      .catch((err) => {
+        setError(err);
       })
       .finally(() => {
         setLoading(false);
@@ -50,7 +51,7 @@ function DeleteComment({ comment_id, user }) {
           {success && (
             <p className="text-success">Comment deleted successfully!</p>
           )}
-          {error && <p className="text-danger">{error}</p>}
+          {error && <ErrorComponent message={error.message} />}
         </div>
       )}
     </>

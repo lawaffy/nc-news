@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { postComment } from "../utils/utils";
 import { useParams } from "react-router-dom";
+import ErrorComponent from "./ErrorComponent";
 
 function PostComment() {
   const { article_id } = useParams();
@@ -36,8 +37,8 @@ function PostComment() {
           window.location.reload();
         }, 2000);
       })
-      .catch((error) => {
-        setError("Error posting comment");
+      .catch((err) => {
+        setError(err);
       })
       .finally(() => {
         setLoading(false);
@@ -71,7 +72,7 @@ function PostComment() {
       </form>
       {loading && <p>Submitting comment...</p>}
       {success && <p>Comment submitted successfully!</p>}
-      {error && <p className="text-danger">{error}</p>}
+      {error && <ErrorComponent message={error.message} />}
     </>
   );
 }

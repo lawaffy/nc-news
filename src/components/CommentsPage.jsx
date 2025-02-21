@@ -5,6 +5,7 @@ import CommentList from "./CommentList";
 import CommentArticle from "./CommentArticle";
 import { useNavigate } from "react-router-dom";
 import PostComment from "./PostComment";
+import ErrorComponent from "./ErrorComponent";
 
 function CommentPage() {
   const navigate = useNavigate();
@@ -24,8 +25,8 @@ function CommentPage() {
           setArticleComments(commentDataFromApi);
           setIsLoading(false);
         })
-        .catch((error) => {
-          setError("Error fetching comments");
+        .catch((err) => {
+          setError(err);
           setIsLoading(false);
         });
     }, 500);
@@ -36,7 +37,12 @@ function CommentPage() {
   }
 
   if (error) {
-    return <p>{error}</p>;
+    return (
+      <>
+        <ErrorComponent message={error.message} />
+        <p>No comments found</p>
+      </>
+    );
   }
 
   return (

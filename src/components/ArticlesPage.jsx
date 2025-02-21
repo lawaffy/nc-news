@@ -3,49 +3,41 @@ import { getArticles } from "../utils/utils";
 import ArticlesList from "./ArticlesList";
 import { useSearchParams } from "react-router-dom";
 import ArticleFilter from "./ArticleFilter";
+import ErrorComponent from "./ErrorComponent";
 
 function ArticlesPage() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const [searchParams] = useSearchParams();
   const topicQuery = searchParams.get("topic");
   const sortByQuery = searchParams.get("sort_by");
   const orderQuery = searchParams.get("order");
-  const votesQuery = searchParams.get("votes");
-  const createdAtQuery = searchParams.get("created_at");
-  const commentCountQuery = searchParams.get("comment_count");
-  const ascQuery = searchParams.get("asc");
-  const descQuery = searchParams.get("desc");
 
   useEffect(() => {
     setIsLoading(true);
-    getArticles(
-      topicQuery,
-      sortByQuery,
-      orderQuery,
-      votesQuery,
-      createdAtQuery,
-      commentCountQuery,
-      ascQuery,
-      descQuery
-    ).then((articlesFromApi) => {
-      setArticles(articlesFromApi);
-      setIsLoading(false);
-    });
-  }, [
-    topicQuery,
-    sortByQuery,
-    orderQuery,
-    votesQuery,
-    createdAtQuery,
-    commentCountQuery,
-    ascQuery,
-    descQuery,
-  ]);
+    getArticles(topicQuery, sortByQuery, orderQuery)
+      .then((articlesFromApi) => {
+        setArticles(articlesFromApi);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        setError(err);
+      });
+  }, [topicQuery, sortByQuery, orderQuery]);
 
   if (isLoading) {
     return <h2>Loading articles...</h2>;
+  }
+
+  if (error) {
+    return (
+      <>
+        <ErrorComponent message={error.message} />
+        <p>Couldn't fetch articles</p>
+      </>
+    );
   }
 
   return (

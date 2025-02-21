@@ -283,3 +283,15 @@ input {
   font-size: 0.9rem;
   color: gray;
 }
+
+.error-container {
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.error-text {
+  display: block;
+  padding: 40px 40px;
+  width: 450px;
+}
