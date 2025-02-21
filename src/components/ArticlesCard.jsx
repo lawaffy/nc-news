@@ -26,6 +26,7 @@ function ArticleCard({ article }) {
         </div>
         <Card.Text>Upvotes: {article.votes}</Card.Text>
         <Card.Text>Comments: {article.comment_count}</Card.Text>
+        <Card.Text>Date: {article.created_at}</Card.Text>
 
         <Button variant="primary" onClick={handleViewArticle}>
           View Article

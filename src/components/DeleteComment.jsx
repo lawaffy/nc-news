@@ -16,7 +16,7 @@ function DeleteComment({ comment_id, user }) {
     } else {
       setShowButton(false);
     }
-  }, []);
+  }, [showButton]);
 
   const handleDelete = () => {
     setLoading(true);
