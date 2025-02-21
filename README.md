@@ -2,9 +2,9 @@
 
 - Frontend application created for backend API. Built using **React**, **Vite**, **React Router**, **React Bootstrap**, **CSS** and **Axios**.
 
-- Provides multiple routes for various endpoints, including data visualisation and ordering/sorting data
+- Provides multiple routes for various get, post, patch, delete endpoints, with data visualisation and ordering/sorting data available to user
 
-- Wireframes & UI can be found in `wireframes` within root directory
+- Wireframes & UI planning can be found in `wireframes` folder, within root of directory
 
 - **Deployed App:** [Hosted on Netlify](https://ncnewz.netlify.app/)
 - **Front End Repository:** [GitHub](https://github.com/lawaffy/nc-news)
