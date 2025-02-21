@@ -11,7 +11,7 @@ function TopicsCard({ topics }) {
           <p>About: {topic.description}</p>
           <button
             className="btn"
-            onClick={() => navigate(`/articles/?topic=${topic.slug}`)}
+            onClick={() => navigate(`/articles?topic=${topic.slug}`)}
           >
             View Articles by Topic
           </button>
