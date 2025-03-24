@@ -53,3 +53,9 @@ export function getTopics() {
     return response.data.topics;
   });
 }
+
+export function getUsers() {
+  return ncNewsApi.get(`/users`).then((response) => {
+    return response.data.users;
+  });
+}
