@@ -5,7 +5,7 @@ import ArticlesPage from "./components/ArticlesPage";
 import SingleArticlePage from "./components/SingleArticlePage";
 import CommentPage from "./components/CommentsPage";
 import { Routes, Route } from "react-router-dom";
-import { UserProvider } from "./components/UserContext";
+import { UserProvider } from "./contexts/UserContext";
 import TopicsPage from "./components/TopicsPage";
 import ErrorPage from "./components/ErrorPage";
 

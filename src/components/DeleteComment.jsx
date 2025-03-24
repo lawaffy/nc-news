@@ -1,11 +1,11 @@
 import Button from "react-bootstrap/Button";
 import { useState, useContext, useEffect } from "react";
-import { UserContext } from "./UserContext";
+import { UserContext } from "../contexts/UserContext";
 import { deleteComment } from "../utils/utils";
 import ErrorComponent from "./ErrorComponent";
 
 function DeleteComment({ comment_id, user }) {
-  const { loggedInUser } = useContext(UserContext);
+  const { user: loggedInUser } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(null);
@@ -17,7 +17,7 @@ function DeleteComment({ comment_id, user }) {
     } else {
       setShowButton(false);
     }
-  }, [showButton]);
+  }, [loggedInUser, user]);
 
   const handleDelete = () => {
     setLoading(true);
