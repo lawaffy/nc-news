@@ -6,8 +6,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #ea7e7e;
+  color: #273332;
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -47,7 +47,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: hsl(0, 0%, 10%);
+  background-color: #273332;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -116,12 +116,12 @@ button:focus-visible {
 
 /* styling for header/fooeter */
 .header {
-  background-color: bisque;
+  background-color: #eba17f;
   padding: 1em;
 }
 
 .footer {
-  background-color: bisque;
+  background-color: #eba17f;
   padding: 2em;
   color: black;
 }
@@ -136,7 +136,7 @@ button:focus-visible {
 }
 
 .card {
-  background-color: #ffffff;
+  background-color: #9edad4;
   width: 18rem;
   padding: 2rem;
   margin: 5rem;
@@ -240,7 +240,7 @@ input {
 }
 
 .btn:hover {
-  background-color: bisque;
+  background-color: #5d8480;
   color: hsl(0, 0%, 10%);
   border: 1px solid transparent;
 }
