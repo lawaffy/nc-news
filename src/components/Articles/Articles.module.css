@@ -1,0 +1,15 @@
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.card {
+  background-color: #9edad4;
+  width: 18rem;
+  padding: 2rem;
+  margin: 5rem;
+  color: black;
+}

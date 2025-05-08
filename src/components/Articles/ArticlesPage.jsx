@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { getArticles } from "../utils/utils";
+import { getArticles } from "../../utils/utils";
 import ArticlesList from "./ArticlesList";
 import { useSearchParams } from "react-router-dom";
 import ArticleFilter from "./ArticleFilter";
-import ErrorComponent from "./ErrorComponent";
+import ErrorComponent from "../ErrorComponent";
 
 function ArticlesPage() {
   const [articles, setArticles] = useState([]);

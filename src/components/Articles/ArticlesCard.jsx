@@ -1,6 +1,7 @@
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
+import styles from "./Articles.module.css";
 
 function ArticleCard({ article }) {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ function ArticleCard({ article }) {
   };
 
   return (
-    <Card className="card">
+    <Card className={styles["card"]}>
       <Card.Img
         className="card-img"
         variant="top"

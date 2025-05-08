@@ -1,8 +1,9 @@
 import ArticleCard from "./ArticlesCard";
+import styles from "./Articles.module.css";
 
 function ArticlesList({ articles }) {
   return (
-    <div className="cards-container">
+    <div className={styles["cards-container"]}>
       <ul>
         {articles.length > 0 ? (
           articles.map((article, index) => (
